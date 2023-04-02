@@ -37,4 +37,32 @@ public class AddressBook {
         System.out.println("EMail ID : "+contacts.getEmail());
         System.out.println("---------------------------------------------");
     }
+    public void editContact() {
+        System.out.println("Enter the First Name : ");
+        String firstName = scanner.next();
+        if (!firstName.equals(contacts.getFirstname())) {
+            System.out.println("The Entered Contact Name is Not Available in Address Book");
+        } else {
+            System.out.println("Match Found--------!!!!");
+            System.out.println("-----------------------");
+            System.out.println("Enter the First Name :");
+            contacts.setFirstname(scanner.next());
+            System.out.println("Enter the Last Name :");
+            contacts.setLastname(scanner.next());
+            System.out.println("Enter the Address :");
+            contacts.setAddress(scanner.next());
+            System.out.println("Enter the City :");
+            contacts.setCity(scanner.next());
+            System.out.println("Enter the State :");
+            contacts.setState(scanner.next());
+            System.out.println("Enter the Zip Code :");
+            contacts.setPin(scanner.nextLong());
+            System.out.println("Enter the Phone Number :");
+            contacts.setPhoneNumber(scanner.nextLong());
+            System.out.println("Enter the EMail ID :");
+            contacts.setEmail(scanner.next());
+            System.out.println("-------------------------------");
+            System.out.println("Contact Update Successfully-----!!");
+        }
+    }
 }
