@@ -65,4 +65,21 @@ public class AddressBook {
             System.out.println("Contact Update Successfully-----!!");
         }
     }
+    public void deleteContact(){
+        System.out.println("Enter the First Name : ");
+        String firstName = scanner.next();
+        if(!firstName.equalsIgnoreCase(contacts.getFirstname())) {
+            System.out.println("The Entered Contact Name is Not Available in Address Book");
+        } else {
+            contacts.setFirstname(null);
+            contacts.setLastname(null);
+            contacts.setAddress(null);
+            contacts.setCity(null);
+            contacts.setState(null);
+            contacts.setPin(0);
+            contacts.setPhoneNumber(0);
+            contacts.setEmail(null);
+            System.out.println("Contact Deleted Successfully-------!!!");
+        }
+    }
 }
