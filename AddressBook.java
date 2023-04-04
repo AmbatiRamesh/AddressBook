@@ -1,9 +1,12 @@
 package com.bridgelabz;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class AddressBook {
     Scanner scanner = new Scanner(System.in);
-    Contacts contacts = new Contacts();
+    Contacts contacts;
+    ArrayList<Contacts>list = new ArrayList<>();
     public void addNewContact() {
+        contacts=new Contacts();
         System.out.println("----------------------------------");
         System.out.println("Enter the Contact Details :-");
         System.out.println("Enter the First Name :");
@@ -17,32 +20,29 @@ public class AddressBook {
         System.out.println("Enter the State :");
         contacts.setState(scanner.next());
         System.out.println("Enter the PIN Code :");
-        contacts.setPin(scanner.nextLong());
+        contacts.setPin(scanner.next());
         System.out.println("Enter the Phone Number :");
-        contacts.setPhoneNumber(scanner.nextLong());
+        contacts.setPhoneNumber(scanner.next());
         System.out.println("Enter the EMail ID :");
         contacts.setEmail(scanner.next());
         System.out.println("Contacts Added Successfully------!!!");
         System.out.println("-----------------------------------------");
+        list.add(contacts);
     }
     public void displayContact() {
-        System.out.println("--------------------------------------------");
-        System.out.println("Contact Details :-");
-        System.out.println("Name : "+contacts.getFirstname()+" "+contacts.getLastname());
-        System.out.println("Address : "+contacts.getAddress());
-        System.out.println("City : "+contacts.getCity());
-        System.out.println("State : "+contacts.getState());
-        System.out.println("PIN Code : "+contacts.getPin());
-        System.out.println("Phone Number : "+contacts.getPhoneNumber());
-        System.out.println("EMail ID : "+contacts.getEmail());
-        System.out.println("---------------------------------------------");
+        if (contacts.getFirstname() == null) {
+            System.out.println("Contact Not Found");
+        } else {
+            for (Contacts cont : list) {
+                System.out.println(cont);
+            }
+        }
     }
     public void editContact() {
+        contacts=new Contacts();
         System.out.println("Enter the First Name : ");
         String firstName = scanner.next();
-        if (!firstName.equals(contacts.getFirstname())) {
-            System.out.println("The Entered Contact Name is Not Available in Address Book");
-        } else {
+        if (firstName.equalsIgnoreCase(contacts.getFirstname())) {
             System.out.println("Match Found--------!!!!");
             System.out.println("-----------------------");
             System.out.println("Enter the First Name :");
@@ -55,31 +55,27 @@ public class AddressBook {
             contacts.setCity(scanner.next());
             System.out.println("Enter the State :");
             contacts.setState(scanner.next());
-            System.out.println("Enter the Zip Code :");
-            contacts.setPin(scanner.nextLong());
+            System.out.println("Enter the PIN Code :");
+            contacts.setPin(scanner.next());
             System.out.println("Enter the Phone Number :");
-            contacts.setPhoneNumber(scanner.nextLong());
+            contacts.setPhoneNumber(scanner.next());
             System.out.println("Enter the EMail ID :");
             contacts.setEmail(scanner.next());
             System.out.println("-------------------------------");
             System.out.println("Contact Update Successfully-----!!");
+            list.add(contacts);
+        } else {
+            System.out.println("The Entered Contact Name is Not Available in Address Book");
         }
     }
-    public void deleteContact(){
+    public void deleteContact() {
         System.out.println("Enter the First Name : ");
         String firstName = scanner.next();
-        if(!firstName.equalsIgnoreCase(contacts.getFirstname())) {
-            System.out.println("The Entered Contact Name is Not Available in Address Book");
-        } else {
-            contacts.setFirstname(null);
-            contacts.setLastname(null);
-            contacts.setAddress(null);
-            contacts.setCity(null);
-            contacts.setState(null);
-            contacts.setPin(0);
-            contacts.setPhoneNumber(0);
-            contacts.setEmail(null);
+        if (firstName.equalsIgnoreCase(contacts.getFirstname())) {
+            list.remove(contacts);
             System.out.println("Contact Deleted Successfully-------!!!");
+        }else {
+            System.out.println("Not Found");
         }
     }
 }

@@ -17,9 +17,9 @@ public class AddressBookMain {
             } else if (choice == 4) {
                 addressBook.displayContact();
             } else if (choice == 5) {
-                System.out.println("Thank You for Using Address Book.");
+                System.out.println("Thank You for Using Address Book");
             } else {
-                System.out.println("Please Select between 1 to 5 only.");
+                System.out.println("Please Select between 1 to 5 only");
             }
         }while( choice != 5 );
     }
