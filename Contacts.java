@@ -44,7 +44,6 @@ public class Contacts {
     public void setPin(String pin) {
         Pin = pin;
     }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }

@@ -78,4 +78,32 @@ public class AddressBook {
             System.out.println("Not Found");
         }
     }
+    public void contactOptions(AddressBook addressBook) {
+        int choice;
+        do {
+            System.out.println("----Welcome to Address Book System----");
+            System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5. Exit ");
+            System.out.println("Enter Choice : ");
+            choice = addressBook.scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    addressBook.addNewContact();
+                    break;
+                case 2:
+                    addressBook.editContact();
+                    break;
+                case 3:
+                    addressBook.deleteContact();
+                    break;
+                case 4:
+                    addressBook.displayContact();
+                    break;
+                case 5:
+                    break;
+                default:
+                    System.out.println("Please Select the Operation between 1 to 5 only.");
+                    break;
+            }
+        } while (choice != 5);
+    }
 }
