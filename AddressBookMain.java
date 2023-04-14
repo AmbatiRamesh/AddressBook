@@ -13,19 +13,11 @@ public class AddressBookMain {
             choice = sc.nextInt();
 
             switch (choice) {
-                case 1:
-                    addressBook.addNewContact();
-                    break;
-                case 2:
-                    addressBook.editContact();
-                    break;
-                case 3:
-                    addressBook.deleteContact();
-                    break;
-                case 4:
-                    addressBook.displayContact();
-                    break;
-                case 5:
+                case 1 -> addressBook.addNewContact();
+                case 2 -> addressBook.editContact();
+                case 3 -> addressBook.deleteContact();
+                case 4 -> addressBook.displayContact();
+                case 5 -> {
                     System.out.println("1. Search by City\n2. Search by State\n3. Exit");
                     System.out.println("Choice :");
                     choice = sc.nextInt();
@@ -41,13 +33,9 @@ public class AddressBookMain {
                         default:
                             System.out.println("Please Select Valid Input");
                     }
-                    break;
-                case 6:
-                    System.out.println("Thank You for Using Address Book.");
-                    break;
-                default:
-                    System.out.println("Please Select between 1 to 6 only.");
-                    break;
+                }
+                case 6 -> System.out.println("Thank You for Using Address Book.");
+                default -> System.out.println("Please Select between 1 to 6 only.");
             }
         } while (choice != 6);
     }
