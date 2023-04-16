@@ -28,11 +28,9 @@ public class Contacts {
     public String getAddress() {
         return Address;
     }
-
     public void setAddress(String address) {
         Address = address;
     }
-
     public String getCity() {
         return city;
     }
