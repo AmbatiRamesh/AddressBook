@@ -6,7 +6,7 @@ public class Contacts {
     private String city;
     private String state;
     private String Pin;
-    private String PhoneNumber;
+    private String phonenumber;
     private String email;
 
     public String getFirstname() {
@@ -24,12 +24,15 @@ public class Contacts {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
     public String getAddress() {
         return Address;
     }
+
     public void setAddress(String address) {
         Address = address;
     }
+
     public String getCity() {
         return city;
     }
@@ -41,33 +44,46 @@ public class Contacts {
     public String getState() {
         return state;
     }
+
     public void setState(String state) {
         this.state = state;
     }
+
     public String getPin() {
         return Pin;
     }
+
     public void setPin(String pin) {
         Pin = pin;
     }
 
-    public String getPhoneNumber() {
-        return PhoneNumber;
+    public String getPhonenumber() {
+        return phonenumber;
     }
-    public void setPhoneNumber(String PhoneNumber) {
-        this.PhoneNumber = PhoneNumber;
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
+
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
+
     @Override
     public String toString() {
-        return "Contacts Details :" + "\n" + "Firstname :" + firstname + "," + "Lastname :" + lastname + ','
-                + "Address :" + Address + ',' + "City :" + city + ',' + "State :" + state + ',' + "Pin :" + Pin + ','
-                + "PhoneNumber :" + PhoneNumber + ',' + "Email :" + email;
+        return "Contacts Details :" +"\n"+
+                "Firstname : " + firstname +"\n"+
+                "Lastname : " + lastname + '\n'+
+                "Address : " + Address + '\n' +
+                "City : " + city + '\n' +
+                "State : " + state + '\n' +
+                "Pin : " + Pin +'\n'+
+                "PhoneNumber : " + phonenumber +'\n'+
+                "Email : " + email ;
     }
 }
 
