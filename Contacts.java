@@ -64,7 +64,6 @@ public class Contacts {
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
-
     public String getEmail() {
         return email;
     }

@@ -2,16 +2,14 @@ package com.bridgelabz;
 import java.util.Scanner;
 public class AddressBookMain {
     public static void main(String[] args) {
-        System.out.println("--------Welcome to Address Book Program-------");
         Scanner sc = new Scanner(System.in);
         int choice;
         AddressBook addressBook = new AddressBook();
         do {
             System.out.println("1. Add New Contact\n2. Edit Contact\n3. Delete Contact" + "\n4. Display Contact\n5." +
-                    " Search by State\n6. Sorted List\n7. New AddressBook \n8. Exit");
+                    " Search by State\n6. Sorted List\n7. New AddressBook \n8. IO Operations \n9. Exit");
             System.out.println("Enter Choice: ");
             choice = sc.nextInt();
-
             switch (choice) {
                 case 1:
                     addressBook.checkContact();
@@ -113,15 +111,37 @@ public class AddressBookMain {
                                 System.out.println("Please Select Valid Input");
                                 break;
                         }
-                    } while (choice != 3) ;
+                    } while (choice != 3);
                     break;
                 case 8:
+                    do {
+                        System.out.println("-----------------------------");
+                        System.out.println("1. Write File\n2. Read File\n3. Exit");
+                        System.out.println("Choice :");
+                        choice = sc.nextInt();
+                        switch (choice) {
+                            case 1:
+                                addressBook.writeFiles();
+                                break;
+                            case 2:
+                                addressBook.readFiles();
+                                break;
+                            case 3:
+                                System.out.println("Thank you");
+                            default:
+                                System.out.println("Please Select Valid Input");
+                                break;
+                        }
+                    } while (choice != 3);
+                    break;
+                case 9:
                     System.out.println("Thank you for Using Address Book");
+                    break;
                 default:
-                    System.out.println("Please Select between 1 to 8 only.");
+                    System.out.println("Please Select between 1 to 9 only.");
                     break;
             }
         }
-        while( choice != 8 );
+        while (choice != 9);
     }
 }
