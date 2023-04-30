@@ -169,7 +169,7 @@ public class AddressBook {
     }
     public void writeFiles()  {
         try{
-            FileWriter fw=new FileWriter("C:\\Users\\rames\\IdeaProjectNew\\AddressBook\\out\\production\\AddressBook\\com\\bridgelabz\\AddressBook.csv");
+            FileWriter fw=new FileWriter("C:\\Users\\rames\\IdeaProjectNew\\AddressBook\\out\\production\\AddressBook\\com\\bridgelabz\\AddressBook.json");
             fw.write(String.valueOf(list));
             fw.write("\n");
             fw.flush();
@@ -179,7 +179,7 @@ public class AddressBook {
     }
     public void readFiles(){
         try {
-            FileReader fr = new FileReader("C:\\Users\\rames\\IdeaProjectNew\\AddressBook\\out\\production\\AddressBook\\com\\bridgelabz\\AddressBook.csv");
+            FileReader fr = new FileReader("C:\\Users\\rames\\IdeaProjectNew\\AddressBook\\out\\production\\AddressBook\\com\\bridgelabz\\AddressBook.json");
             int i;
             while ((i = fr.read()) != -1)
                 System.out.print((char) i);
