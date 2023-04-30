@@ -56,11 +56,9 @@ public class Contacts {
     public void setPin(String pin) {
         Pin = pin;
     }
-
     public String getPhonenumber() {
         return phonenumber;
     }
-
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
